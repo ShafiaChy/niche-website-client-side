@@ -1,0 +1,15 @@
+.product-image-size{
+    height: 300px;
+}
+
+.product-image-size{
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 5%;
+    border: 1px solid black;
+}
+
+.button-bg{
+    background-color: black;
+    color: #ffa2b6;
+}
