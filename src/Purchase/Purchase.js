@@ -58,7 +58,7 @@ const PlaceOrder = () => {
                 <div className="card w-50 ms-5 mb-3" style={{backgroundColor:"black", color: "#fa789f"}}>
                     <img className="card-img-top w-75 mx-auto my-3" style={{height:400}} src={singleProduct[0]?.img} alt="Card cap"/>
                     <div className="card-body">
-                    <h5 className="card-title">{singleProduct[0]?.name}</h5>
+                    <h6 className="card-title">{singleProduct[0]?.name}</h6>
                     <h5 className="card-title">Tk:{singleProduct[0]?.price}/-</h5>
                     <p className="card-text">{singleProduct[0]?.details}</p>
                     </div>
