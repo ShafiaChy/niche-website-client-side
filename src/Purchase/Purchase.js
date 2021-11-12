@@ -25,7 +25,7 @@ const PlaceOrder = () => {
     },[])
 
       
-     const singleProduct = products.filter(detail => detail.key == id)
+     const singleProduct = products.filter(product => product.key == id)
         
     
       
@@ -64,6 +64,7 @@ const PlaceOrder = () => {
                     </div>
                 </div>
                 <div className="card w-75 h-75  ms-5 me-lg-3"  style={{backgroundColor:"black", color: "#fa789f"}}>
+                    
                     <h1 className="text-center my-3 mx-2">Fill up the form</h1>
                     <form onSubmit={handleSubmit(onSubmit)} className="ms-4">
                     <div className="row mb-3">

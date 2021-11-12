@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Product.css'
 const Product = (props) => {
     const {key,name,img,price,description} = props.product;
+    
     return (
         <div>
             <div className="col" style={{minHeight:400}}>

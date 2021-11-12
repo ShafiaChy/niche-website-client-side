@@ -1,10 +1,14 @@
 import React from 'react';
+import StarRating from 'react-star-rating';
+
 import './Review.css'
 
 
-
 const Review = (props) => {
+    
     const {review,rate,img,name} = props.rev;
+      
+    
     return (
         <div>
             <div className="col">
@@ -14,7 +18,9 @@ const Review = (props) => {
                        <div className="card-body">
 
                             <p className="card-text text-start text-white fs-5">{review}</p>
-                            <h5>{rate}</h5>
+                            <div>
+                            <StarRating name="disabled" caption="Disabled." totalStars={5} rating={rate} disabled={true} />
+                            </div>
 
 
                             </div>

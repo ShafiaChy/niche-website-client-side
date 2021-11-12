@@ -12,18 +12,15 @@ const Login = () => {
     const [email, setEmail] =  useState('');
     const [password, setPassword] =  useState('');
     const [error, setError] =  useState('');
-    const {signInWithGoogle,loginWithEmailAndPassword} = useAuth();
+    const {authError,signInWithGoogle,loginWithEmailAndPassword} = useAuth();
     const location = useLocation();
     const history = useHistory();
 
-    const redirect_uri = location.state?.from || '/home';
      
 
     const handleGoogleSignIn = () => {
-        signInWithGoogle()
-            .then(result => {
-                 history.push(redirect_uri);
-            })
+        signInWithGoogle(email, password, location, history);
+       
     }
 
     const handleEmailChange = e => {
@@ -41,22 +38,8 @@ const Login = () => {
        
     const handleEmailAndPasswordSignIn = e => {
         e.preventDefault();
-        loginWithEmailAndPassword(email,password)
-        .then(result => {
-           
-           history.push(redirect_uri);
-        })
-        .catch(error =>{
-         
-        if(error.code === 'auth/wrong-password'){
-            setError('Wrong password')
-        }
-        if(error.code === 'auth/user-not-found'){
-            setError('Wrong email address')
-        }
-       
-         
-        })
+        loginWithEmailAndPassword(email,password, location, history)
+        
         
     }
     return (
@@ -80,7 +63,12 @@ const Login = () => {
         </div>
     </div>
     <div className="d-flex justify-content-center">
-        <span className="text-danger" style={{textShadow:"1px 1px rgb(83, 80, 80)"}}><h6>{error}</h6></span>
+        {
+               authError?
+               <span className="text-danger" style={{textShadow:"1px 1px rgb(83, 80, 80)"}}><h6>{authError}</h6></span>
+               :
+               <span className="text-danger" style={{textShadow:"1px 1px rgb(83, 80, 80)"}}><h6>{error}</h6></span>
+           }
     </div>
     <p className="d-flex justify-content-center">Don't have an account? <Link to = '/register'> Register</Link> </p>
    <div className="d-flex justify-content-center">

@@ -3,25 +3,26 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 import useAuth from '../Hooks/useAuth';
 import './Register.css'
-import { useHistory } from 'react-router';
+import { useHistory,useLocation } from 'react-router';
 
 
 
 
 const Register = () => {
     const history = useHistory();
+    const location = useLocation();
     const [email, setEmail] =  useState('');
     const [password, setPassword] =  useState('');
     const [name, setName] =  useState('');
     const [error, setError] =  useState('');
-    const {updateName,signInWithGoogle,createAccount} = useAuth();
+    const {signInWithGoogle,createAccount, authError }  = useAuth();
 
+        
     const handleGoogleSignIn = () => {
-        signInWithGoogle()
-            .then(result => {
-              history.push('/home');
-            })
+        signInWithGoogle(email, password, location, history);
+       
     }
+    
 
     const handleNameChange = e => {
         setName(e.target.value);
@@ -45,20 +46,21 @@ const Register = () => {
             setError('Password should have atleast two uppercase')
             return;
         }
-
-        createAccount(email,password) 
-        
-            .then(result => {
-                updateName(name)
-                //history.push('/home');
-            })
-            .catch(error =>{
-                setError(error.message)
-            })
+       
+      
+        createAccount(email, password, name,history);
+            // saveUser(email,name)
+            // .then(result => {
+            //     updateName(name)
+            //     //history.push('/home');
+            // })
+            // .catch(error =>{
+            //     setError(error.message)
+            // })
         
             
     }
-
+    
     return (
         <div className="register-bg" style={{color:"#f3718dce", height:'90vh'}}>
              <h1 className="mt-5 d-flex justify-content-center">Hello there, Beautiful Member!</h1>
@@ -84,7 +86,12 @@ const Register = () => {
         </div>
        
             <div className="d-flex justify-content-center">
-            <span className="text-danger" style={{textShadow:"1px 1px rgb(83, 80, 80)"}}><h6>{error}</h6></span>
+           {
+               authError?
+               <span className="text-danger" style={{textShadow:"1px 1px rgb(83, 80, 80)"}}><h6>{authError}</h6></span>
+               :
+               <span className="text-danger" style={{textShadow:"1px 1px rgb(83, 80, 80)"}}><h6>{error}</h6></span>
+           }
             </div>
    
             <p className="ms-2 d-flex justify-content-center">Already have an account? <Link to = '/login'>Login</Link> </p>
