@@ -1,5 +1,6 @@
 import React ,{useState, useEffect} from 'react';
 import Dashboard from '../Home/Shared/Dashboard/Dashboard';
+import Footer from '../Home/Shared/Footer/Footer';
 import ShowAllOrders from './ShowAllOrders';
 
 
@@ -8,7 +9,7 @@ import ShowAllOrders from './ShowAllOrders';
 const ManageAllOrders = () => {
     const [orders, setOrder] = useState([]);
     useEffect(() =>{
-        fetch('http://localhost:5000/orders')
+        fetch('https://still-anchorage-92551.herokuapp.com/orders')
         .then(res => res.json())
         .then(data => setOrder(data))
 
@@ -27,6 +28,7 @@ const ManageAllOrders = () => {
                         ></ShowAllOrders>)
                 }
               </div>
+              <Footer></Footer>
         </div>
     );
 };

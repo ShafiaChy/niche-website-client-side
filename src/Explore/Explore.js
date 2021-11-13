@@ -1,4 +1,5 @@
 import React ,{useEffect,useState}from 'react';
+import Footer from '../Pages/Home/Shared/Footer/Footer';
 import Navigation from '../Pages/Home/Shared/Navigation/Navigation';
 import ExploreProduct from './ExploreProduct';
 
@@ -7,7 +8,7 @@ const  Explore = () => {
     const [exploreProducts, setExploreProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://still-anchorage-92551.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setExploreProducts(data))
     
@@ -23,6 +24,7 @@ const  Explore = () => {
                     exploreProduct = {exploreProduct}></ExploreProduct>)
             }
         </div>
+        <Footer></Footer>
         </div>
         
     );

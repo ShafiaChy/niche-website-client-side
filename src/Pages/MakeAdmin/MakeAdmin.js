@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Dashboard from '../Home/Shared/Dashboard/Dashboard';
+import Footer from '../Home/Shared/Footer/Footer';
 
 const MakeAdmin = () => {
     const [email, setEmail] =  useState('');
@@ -12,7 +13,7 @@ const MakeAdmin = () => {
         e.preventDefault();
         const user = {email};
         
-            fetch('http://localhost:5000/users/admin',{
+            fetch('https://still-anchorage-92551.herokuapp.com/users/admin',{
                 method:'PUT',
                 headers:{
                     'content-type':'application/json'
@@ -46,6 +47,7 @@ const MakeAdmin = () => {
         </div>
         
      </form>
+     <Footer></Footer>
     </div>
     );
 };

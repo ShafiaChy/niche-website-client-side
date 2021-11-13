@@ -16,6 +16,8 @@ import MakeAdmin from './Pages/MakeAdmin/MakeAdmin';
 import ManageAllOrders from './Pages/ManageAllOrders/ManageAllOrders';
 import AddProduct from './Pages/AddProduct/AddProduct';
 import ManageProducts from './Pages/ManageProducts/ManageProducts';
+import NotFound from './Pages/NotFound/NotFound';
+import AdminRoute from './PrivateRoute/AdminRoute';
 
 function App() {
   return (
@@ -40,38 +42,43 @@ function App() {
      <Route exact path="/explore">
       <Explore></Explore>
      </Route>
+     
      <PrivateRoute exact path="/dashboard">
       <Dashboard></Dashboard>
      </PrivateRoute>
      <PrivateRoute exact path="/my-order">
       <MyOrder></MyOrder>
      </PrivateRoute> 
-     <PrivateRoute exact path="/admin">
+     <AdminRoute exact path="/admin">
      <MakeAdmin></MakeAdmin>
-     </PrivateRoute>
+     </AdminRoute>
      <PrivateRoute exact path="/pay">
         <Pay></Pay>
      </PrivateRoute> 
      <PrivateRoute exact path="/review">
         <AddReview></AddReview>
      </PrivateRoute>  
-     <PrivateRoute exact path="/manage-all-orders">
+     <AdminRoute exact path="/manage-all-orders">
         <ManageAllOrders></ManageAllOrders>
-     </PrivateRoute>  
+     </AdminRoute>  
      <PrivateRoute exact path ="/purchase/:id">
           <Purchase></Purchase>
       </PrivateRoute>
-      <PrivateRoute exact path ="/add-product">
+      <AdminRoute exact path ="/add-product">
           <AddProduct></AddProduct>
-      </PrivateRoute>
-      <PrivateRoute exact path ="/manage-products">
+      </AdminRoute>
+      <AdminRoute exact path ="/manage-products">
          <ManageProducts></ManageProducts>
-      </PrivateRoute>
+      </AdminRoute>
+
+      <Route path="/*">
+      <NotFound></NotFound>
+     </Route>
      
    </Switch>
    </Router>
   
-      </AuthProvider>
+  </AuthProvider>
      
     
     </div>

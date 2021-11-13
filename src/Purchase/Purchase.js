@@ -18,7 +18,7 @@ const PlaceOrder = () => {
 
     //data load
     useEffect(() => {
-    fetch('http://localhost:5000/products')
+    fetch('https://still-anchorage-92551.herokuapp.com/products')
     .then(res => res.json())
     .then(data => setProducts(data))
   
@@ -33,7 +33,7 @@ const PlaceOrder = () => {
         console.log(data)
         data.order=id;
         data.status='Pending'
-        fetch('http://localhost:5000/orders', {
+        fetch('https://still-anchorage-92551.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

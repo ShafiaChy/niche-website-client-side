@@ -19,7 +19,7 @@ const Navigation = () => {
               <NavLink className="text-decoration-none text-dark" to="/explore" href="#home"><h5>Explore</h5></NavLink>
 
               {
-                user.email && <NavLink className="text-decoration-none text-dark ms-3" to='/dashboard' href="#deets"><h5>Dashboard</h5></NavLink>  
+                user.email && <NavLink className="text-decoration-none text-dark ms-lg-3" to='/dashboard' href="#deets"><h5>Dashboard</h5></NavLink>  
               }
             </Nav>
             <Nav>

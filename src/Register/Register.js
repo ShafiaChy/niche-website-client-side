@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import useAuth from '../Hooks/useAuth';
 import './Register.css'
 import { useHistory,useLocation } from 'react-router';
+import Navigation from '../Pages/Home/Shared/Navigation/Navigation';
 
 
 
@@ -42,11 +43,7 @@ const Register = () => {
             return;
         }
 
-        if(!/(?=.*[A-Z].*[A-Z])/.test(password)){
-            setError('Password should have atleast two uppercase')
-            return;
-        }
-       
+        
       
         createAccount(email, password, name,history);
             // saveUser(email,name)
@@ -62,7 +59,8 @@ const Register = () => {
     }
     
     return (
-        <div className="register-bg" style={{color:"#f3718dce", height:'90vh'}}>
+        <div className="register-bg" style={{color:"#f3718dce", height:'100vh'}}>
+            <Navigation></Navigation>
              <h1 className="mt-5 d-flex justify-content-center">Hello there, Beautiful Member!</h1>
             <p className="d-flex justify-content-center">Sign up to continue</p>    
              <form onSubmit={handleRegistration}>

@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import useAuth from '../../../Hooks/useAuth';
 import Dashboard from '../../Home/Shared/Dashboard/Dashboard';
+import Footer from '../../Home/Shared/Footer/Footer';
 
 import ShowMyOrder from './ShowMyOrder';
 
@@ -11,7 +12,7 @@ const MyOrder = () => {
 
     //LOADING ORDER DATA TO MATCH THE EMAIL IN ORDER WITH THE EMAIL AFTER LOGINING
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://still-anchorage-92551.herokuapp.com/orders')
         .then(res => res.json())
         .then(data => setMyOrder(data))
     },[])
@@ -28,7 +29,7 @@ const MyOrder = () => {
                 chosenOrder ={chosenOrder}
                 ></ShowMyOrder>)
             }
-         
+            <Footer></Footer>
         </div>
     );
 };

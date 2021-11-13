@@ -9,7 +9,7 @@ const ShowMyOrder = (props) => {
    
     //LOADING PRODUCTS DATA TO MATCH THE OFFER KEY WITH THE ORDER KEY 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://still-anchorage-92551.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setChosenProducts(data))
     },[])
@@ -18,7 +18,7 @@ const ShowMyOrder = (props) => {
 
     //DELETING ORDERS BY USERS
     const handleDelete = id =>{
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://still-anchorage-92551.herokuapp.com/orders/${id}`;
         fetch(url, {
             method: 'DELETE'
         })

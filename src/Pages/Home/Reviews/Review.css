@@ -3,7 +3,10 @@
     
 }
 .review-info{
-    background-color: #f3718dce;
+    background-color: #f3718de7;
     text-shadow: 1px 1px rgb(83, 80, 80);
     
+}
+.add-review-bg{
+    background-image: url(../../../Images/reviewBg.jpg);
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import StarRating from 'react-star-rating';
-
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
 import './Review.css'
 
 
@@ -11,6 +11,7 @@ const Review = (props) => {
     
     return (
         <div>
+            
             <div className="col">
                         <div className="card h-100" className="review-banner" style={{minHeight:400}}>
                        
@@ -18,8 +19,11 @@ const Review = (props) => {
                        <div className="card-body">
 
                             <p className="card-text text-start text-white fs-5">{review}</p>
-                            <div>
-                            <StarRating name="disabled" caption="Disabled." totalStars={5} rating={rate} disabled={true} />
+                            <div className="d-flex justify-content-center" style={{backgroundColor:'white'}}>
+                            <Stack  spacing={1}>
+                            
+                            <Rating  name="half-rating-read" defaultValue={rate} precision={0.5} readOnly /> 
+                            </Stack> <small style={{color:'black',textShadow:'none'}}>({rate})</small>
                             </div>
 
 

@@ -4,6 +4,8 @@ import Facilities from '../Facilities/Facilities';
 import Products from '../Products/Products';
 import Navigation from '../Shared/Navigation/Navigation';
 import Reviews from '../Reviews/Reviews';
+import Footer from '../Shared/Footer/Footer';
+import ExtraSection from '../ExtraSection/ExtraSection';
 
 
 const Home = () => {
@@ -14,6 +16,8 @@ const Home = () => {
             <Facilities></Facilities>
             <Products></Products>
             <Reviews></Reviews>
+            <ExtraSection></ExtraSection>
+            <Footer></Footer>
         </div>
     );
 };

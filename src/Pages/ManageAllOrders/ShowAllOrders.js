@@ -8,7 +8,7 @@ const ShowAllOrders = (props) => {
     
     //loading product data to match the key property in product with the key property in order
     useEffect(() =>{
-        fetch('http://localhost:5000/products')
+        fetch('https://still-anchorage-92551.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setUserOrder(data))
     },[])
@@ -17,7 +17,7 @@ const ShowAllOrders = (props) => {
 
     //loading data to update status
     useEffect(() =>{
-        fetch('http://localhost:5000/orders')
+        fetch('https://still-anchorage-92551.herokuapp.com/orders')
         .then(res => res.json())
         .then(data => setOrderStatus(data))
     },[])
@@ -25,7 +25,7 @@ const ShowAllOrders = (props) => {
     //approve an order
     const handleShipped = id =>{
 
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://still-anchorage-92551.herokuapp.com/orders/${id}`;
         
         const approved = orderStatus.filter(orderStat => orderStat._id == id)
         approved[0].status = 'Shipped';
@@ -54,7 +54,7 @@ const ShowAllOrders = (props) => {
 
     //delete an order
     const handleDelete = id =>{
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://still-anchorage-92551.herokuapp.com/orders/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -101,7 +101,7 @@ const ShowAllOrders = (props) => {
                                 Status:</span> {status}</h6>
 
                             <div className="d-flex">
-                            <button onClick={()=> handleShipped(_id)} className="btn btn-success me-3">
+                            <button onClick={()=> handleShipped(_id)} className="btn text-white me-3" style={{backgroundColor:'#f3718de7'}}>
                                Shipped
                             </button>
 

@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+# Pout Perfect.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+My project link: [Pout Perfect.](https://niche-website-36fe3.web.app/).
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## About my project
+<ol>
+    <li>Pout Perfect is a website that sells classic and emerging brands lipsticks.</li>
+    <li>The website allows the users to buy lipsticks by clicking a BUY NOW button.</li>
+    <li>When the BUY NOW button is clicked the user will be directed to the Purchase page. If, however, the user is not logged in, they will be led to the login page.After logging in with valid information, the users will be redirected to the Purchase page</li>
+    <li>Users will need to fill up a form on the Purchase page to buy the lipsticks.The form will have the user's name and email address by default.This means the user will not have to write them out.</li>
+    <li>The website has user level and admin level.If a user logs in, he/she will have access to the Pay, Add A review and My Orders pages on Dashboard. If, however, an admin logs in, he/she will have access to the Manage All Orders, Add A Product, Manage All Products and Make Admin pages on Dashboard. A user will not see the routes admins have access to and vice versa.</li>
+    <li>The routes (except Home and Explore pages) and the Dashboard itself are private routes.This means a user or an admin will only have access to them if they are logged in.</li>
+    <li>A normal user can add a review, buy products and see all his/her orders.If he/she wants,he/she can delete an order.</li>
+    <li>An admin can add a new product,delete a product,delete a user's order and make another user admin.
+    <li>If admin clicks the Shipped button, the status will get updated from Pending to Shipped.A normal user can see the updated status as well.</li>
+    <li>The website uses react-router-dom so it doesn't reload the page everytime a link on the navbar is clicked.</li>
+    <li>The private routes do not take the users to the login page when they are reloaded. </li>
+    <li>Dialog boxes will appear each time a button is clicked to notify the completion of the process to the users and the admin</li>
+    <li>The header and footer will not disappear during navigation.</li>
+</ol>

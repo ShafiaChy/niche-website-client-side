@@ -64,10 +64,12 @@ const loginWithEmailAndPassword = (email, password, location, history) => {
 //     }
 
     useEffect(() =>{
+        
         fetch(`http://localhost:5000/users/${user.email}`)
         .then(res => res.json())
         .then(data => setAdmin(data.admin))
     },[user.email])
+    //console.log(`http://localhost:5000/users/${user.email}`)
 
 const createAccount = (email, password, name, history) => {
     setIsLoading(true);
@@ -139,7 +141,7 @@ const createAccount = (email, password, name, history) => {
        })
        .then()
    }
-   
+   console.log(admin)
 
     return {
         user,

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useForm } from "react-hook-form";
 import Dashboard from '../Home/Shared/Dashboard/Dashboard';
+import Footer from '../Home/Shared/Footer/Footer';
 import './Product.css'
 
 const AddProduct = () => {
@@ -9,7 +10,7 @@ const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data =>{ 
         console.log(data);
-        axios.post('http://localhost:5000/products', data)
+        axios.post('https://still-anchorage-92551.herokuapp.com/products', data)
         .then(res =>{
             if(res.data.insertedId){
                 alert('Product added successfully')
@@ -20,11 +21,11 @@ const AddProduct = () => {
   
    
     return (
-        <div>
+        <div >
             <Dashboard></Dashboard>
-            <div className="w-50 mx-auto py-5 add-a-product-div rounded mt-5">
+            <div  className="w-75 mx-auto py-5 add-a-product-div rounded mt-5">
                 <h2 className="text-center mb-4 mx-3">Add A New Product</h2>
-            <div className="ms-3">
+            <div  className="ms-3">
             <form onSubmit={handleSubmit(onSubmit)}>
               
             <div className="row mb-3">
@@ -71,6 +72,7 @@ const AddProduct = () => {
                 </form>
             </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

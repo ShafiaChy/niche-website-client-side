@@ -1,5 +1,6 @@
 import React ,{useEffect,useState}from 'react';
 import Dashboard from '../Home/Shared/Dashboard/Dashboard';
+import Footer from '../Home/Shared/Footer/Footer';
 import ManageAllProducts from './ManageAllProducts';
 
 const ManageProducts = () => {
@@ -7,7 +8,7 @@ const ManageProducts = () => {
     const [manageProducts, setManageProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://still-anchorage-92551.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setManageProducts(data))
     
@@ -23,6 +24,7 @@ const ManageProducts = () => {
                     manageProduct = {manageProduct}></ManageAllProducts>)
             }
         </div>
+        <Footer></Footer>
         </div>
         
     );

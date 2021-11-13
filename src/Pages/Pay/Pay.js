@@ -5,7 +5,7 @@ const Pay = () => {
     return (
         <div>
             <Dashboard></Dashboard>
-            <h2>Pay system soon to come.</h2>
+            <h2 className="d-flex justify-content-center mt-5">Payment system soon to come.</h2>
         </div>
     );
 };

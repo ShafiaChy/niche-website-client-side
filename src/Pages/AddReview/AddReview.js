@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useForm } from "react-hook-form";
 import Dashboard from '../Home/Shared/Dashboard/Dashboard';
+import Footer from '../Home/Shared/Footer/Footer';
 import './AddReview.css'
 
 const AddReview = () => {
@@ -9,7 +10,7 @@ const AddReview = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data =>{ 
         console.log(data);
-        axios.post('http://localhost:5000/reviews', data)
+        axios.post('https://still-anchorage-92551.herokuapp.com/reviews', data)
         .then(res =>{
             if(res.data.insertedId){
                 alert('successfully added')
@@ -20,9 +21,9 @@ const AddReview = () => {
   
    
     return (
-        <div>
+        <div className="add-review-bg">
             <Dashboard></Dashboard>
-            <div className="w-75 mx-auto py-5 add-a-service-div rounded mt-5">
+            <div className="w-75 mx-auto py-5 add-a-review-div rounded mt-5">
                 <h2 className="text-center mb-4 mx-3">Add Your Review</h2>
             <div className="ms-3">
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -36,7 +37,7 @@ const AddReview = () => {
                 <div className="row mb-3">
                     <label htmlFor="inputRate" className="col-sm-2 col-form-label input-height">Rate</label>
                     <div className="col-sm-10">
-                    <input className="w-75 rounded border-1" type="number"  {...register("rate")}/>
+                    <input className="w-75 rounded border-1" type="float"  {...register("rate")}/>
                     </div>
                 </div>
                 <div className="row mb-3">
@@ -58,6 +59,7 @@ const AddReview = () => {
                 </form>
             </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

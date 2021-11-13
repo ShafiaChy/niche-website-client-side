@@ -1,0 +1,13 @@
+.arrow {
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+    cursor: pointer;
+  }
+  .arrow:hover {
+    top: -10px;
+  }
+
+  .event-image{
+      height: 200px;
+  }

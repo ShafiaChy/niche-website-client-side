@@ -4,7 +4,7 @@ const ManageAllProducts = (props) => {
     const {key,name,img,price,description,_id} = props.manageProduct;
 
     const handleDelete = id =>{
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://still-anchorage-92551.herokuapp.com/products/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -46,9 +46,9 @@ const ManageAllProducts = (props) => {
                        
                         
                     </div>
-                    
+                  
                 </div> 
-                
+               
         </div>
     );
 };
