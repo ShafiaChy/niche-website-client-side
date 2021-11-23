@@ -1,11 +1,13 @@
 # Pout Perfect.
 
 
-My project link: [Pout Perfect.](https://niche-website-36fe3.web.app/).
+My project link: [Pout Perfect](https://niche-website-36fe3.web.app/).
 
 ## About my project
 <ol>
     <li>Pout Perfect is a website that sells classic and emerging brands lipsticks.</li>
+    <li>It is a responsive website made with <b>ReactJS</b>, <b>Bootstrap</b> and <b>Material-UI</b> for star-rating.</li>
+    <li><b>Firebase</b> is used for hosting and authentication and <b>MongoDB is used to store data</b></li> 
     <li>The website allows the users to buy lipsticks by clicking a BUY NOW button.</li>
     <li>When the BUY NOW button is clicked the user will be directed to the Purchase page. If, however, the user is not logged in, they will be led to the login page.After logging in with valid information, the users will be redirected to the Purchase page</li>
     <li>Users will need to fill up a form on the Purchase page to buy the lipsticks.The form will have the user's name and email address by default.This means the user will not have to write them out.</li>
