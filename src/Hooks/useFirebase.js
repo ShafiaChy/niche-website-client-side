@@ -3,8 +3,6 @@ import {  getAuth, signInWithPopup, signInWithEmailAndPassword, GoogleAuthProvid
 import initializeAuthentication from "../Firebase/firebase.init";
 
 
-
-
 initializeAuthentication();
 const useFirebase = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -14,7 +12,7 @@ const useFirebase = () => {
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
 
-    const signInWithGoogle = (email,password,location, history) => {
+    const signInWithGoogle = (location, history) => {
         setIsLoading(true);
         signInWithPopup(auth, provider)
             .then((result) => {
@@ -63,13 +61,9 @@ const loginWithEmailAndPassword = (email, password, location, history) => {
      
 //     }
 
-    useEffect(() =>{
-        
-        fetch(`http://localhost:5000/users/${user.email}`)
-        .then(res => res.json())
-        .then(data => setAdmin(data.admin))
-    },[user.email])
+    
     //console.log(`http://localhost:5000/users/${user.email}`)
+    
 
 const createAccount = (email, password, name, history) => {
     setIsLoading(true);
@@ -132,7 +126,7 @@ const createAccount = (email, password, name, history) => {
 
    const saveUsers = (email, displayName, method) =>{
        const user = {email, displayName};
-       fetch('http://localhost:5000/users',{
+       fetch('https://still-anchorage-92551.herokuapp.com/users',{
            method:method,
            headers:{
             'content-type':'application/json'
@@ -141,7 +135,21 @@ const createAccount = (email, password, name, history) => {
        })
        .then()
    }
+   useEffect(() =>{
+        
+    fetch('https://still-anchorage-92551.herokuapp.com/users')
+    .then(res => res.json())
+    .then(data => setUser(data))
+},[])
+console.log("hi",user)
+   useEffect(() =>{
+        
+    fetch(`https://still-anchorage-92551.herokuapp.com/users/${user.email}`)
+    .then(res => res.json())
+    .then(data => setAdmin(data.admin))
+},[user.email])
    console.log(admin)
+   console.log(user)
 
     return {
         user,

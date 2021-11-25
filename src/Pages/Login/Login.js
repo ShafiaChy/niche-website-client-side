@@ -19,7 +19,7 @@ const Login = () => {
      
 
     const handleGoogleSignIn = () => {
-        signInWithGoogle(email, password, location, history);
+        signInWithGoogle(location, history);
        
     }
 
