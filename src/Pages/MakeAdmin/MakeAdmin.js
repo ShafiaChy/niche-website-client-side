@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import Dashboard from '../Home/Shared/Dashboard/Dashboard';
 import Footer from '../Home/Shared/Footer/Footer';
+import useAuth from '../../Hooks/useAuth';
 
 const MakeAdmin = () => {
     const [email, setEmail] =  useState('');
+    const {token} = useAuth();
    
     const handleEmailChange = e => {
         setEmail(e.target.value);
@@ -16,6 +18,7 @@ const MakeAdmin = () => {
             fetch('https://still-anchorage-92551.herokuapp.com/users/admin',{
                 method:'PUT',
                 headers:{
+                    'authorization': `Bearer ${token}`,
                     'content-type':'application/json'
                 },
                 body: JSON.stringify(user)

@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import {  getAuth, signInWithPopup, signInWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, createUserWithEmailAndPassword, updateProfile, signOut } from "firebase/auth";
+import {  getAuth, signInWithPopup, signInWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, createUserWithEmailAndPassword, updateProfile, signOut, getIdToken } from "firebase/auth";
 import initializeAuthentication from "../Firebase/firebase.init";
 
 
@@ -8,6 +8,7 @@ const useFirebase = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
     const [user, setUser] = useState({});
+    const [token, setToken] = useState('');
     const [admin, setAdmin] = useState(false);
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
@@ -111,9 +112,12 @@ const createAccount = (email, password, name, history) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
-              // User is signed in, see docs for a list of available properties
-              // https://firebase.google.com/docs/reference/js/firebase.User
+             
               setUser(user);
+              getIdToken(user)
+              .then(idToken => {
+                  setToken(idToken)
+              })
               // ...
             } else {
               // User is signed out
@@ -135,13 +139,17 @@ const createAccount = (email, password, name, history) => {
        })
        .then()
    }
-   useEffect(() =>{
-        
-    fetch('https://still-anchorage-92551.herokuapp.com/users')
-    .then(res => res.json())
-    .then(data => setUser(data))
-},[])
-console.log("hi",user)
+   useEffect(() => {
+    async function fetchMyAPI() {
+      let response = await fetch('https://still-anchorage-92551.herokuapp.com/users')
+      response = await response.json()
+      setUser(response)
+    }
+
+ 
+  }, [])
+  
+//console.log("hi",user)
    useEffect(() =>{
         
     fetch(`https://still-anchorage-92551.herokuapp.com/users/${user.email}`)
@@ -154,6 +162,7 @@ console.log("hi",user)
     return {
         user,
         admin,
+        token,
         auth,
         authError,
         isLoading,
