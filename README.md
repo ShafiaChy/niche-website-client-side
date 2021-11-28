@@ -5,7 +5,7 @@ My project link: [Pout Perfect](https://niche-website-36fe3.web.app/).
 
 ## About my project
 <ol>
-    <li>Pout Perfect is a website that sells classic and emerging brands lipsticks.</li>
+    <li>Pout Perfect is a website that sells classic and emerging brands lipsticks. The project focuses on front-end and backend developments.</li>
     <li>Implemented the Bootstrap framework for developing a responsive website for devices of different sizes</li>
     <li>Integrated Firebase for two-way sign-in methods (Google and Email/Password) with form validation for the users and the admin</li>
     <li>It has dynamic star-rating which means the stars fill up depending on the rate given.</li>
