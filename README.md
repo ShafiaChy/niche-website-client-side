@@ -8,7 +8,7 @@ My project link: [Pout Perfect](https://niche-website-36fe3.web.app/).
     <li>Pout Perfect is a website that sells classic and emerging brands lipsticks.</li>
     <li>Implemented the Bootstrap framework for developing a responsive website for devices of different sizes</li>
     <li>Integrated Firebase for two-way sign-in methods (Google and Email/Password) with form validation for the users and the admin</li>
-    <li><b>It has dynamic star-rating which means the stars fill up depending on the rate given.</li>
+    <li>It has dynamic star-rating which means the stars fill up depending on the rate given.</li>
     <li><b>Firebase</b> is used for hosting and authentication and <b>MongoDB is used to store data</b></li> 
     <li>The website allows the users to buy lipsticks by clicking a BUY NOW button.</li>
     <li>When the BUY NOW button is clicked the user will be directed to the Purchase page. If, however, the user is not logged in, they will be led to the login page.After logging in with valid information, the users will be redirected to the Purchase page</li>
